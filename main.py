@@ -47,7 +47,7 @@ def predict():
     return predict_result(chosen_model, runtimes, respon_model, 'temp.png')
 
 def predict_result(model, run_time, probs, img):
-    class_list = {'benign': 0, 'malignant': 1}
+    class_list = {'meningioma': 0, 'glioma': 1}
     idx_pred = probs.index(max(probs))
     labels = list(class_list.keys())
     return render_template('/result_select.html', labels=labels, 
