@@ -28,8 +28,8 @@ def index():
 def predict():
     chosen_model = request.form['select_model']
     model_dict = {'manual'        : 'static/MLModule/model.h5',
-                  'vgg'           : 'static/MLModule/vgg.h5',
-                  'resnet'        : 'static/MLModule/model_resnet.h5',}
+                  'vgg'           : 'static/MLModule/model_vgg.tflite',
+                  'resnet'        : 'static/MLModule/model_resnet.tflite',}
     if chosen_model in model_dict:
         model = load_model(model_dict[chosen_model]) 
     else:
